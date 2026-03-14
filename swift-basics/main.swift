@@ -170,3 +170,39 @@ let developer = iOSDeveloper(
     skills: ["Swift", "UIKit", "SwiftUI", "REST APIs", "CoreData"]
 )
 developer.showSkills()
+
+
+// --------------------------------------
+// MARK: Day 6 — Protocols & Extensions
+// --------------------------------------
+
+
+// Protocol = Rules / Blueprint
+protocol Greetable {
+    var name: String { get }
+    func greet()
+}
+
+// Protocol adopt karo
+struct IOSDeveloper: Greetable {
+    var name: String
+    var experience: Double
+    
+    func greet() {
+        print("Hi! I am \(name), iOS Developer with \(experience) years experience!")
+    }
+}
+
+extension Double {
+    var toRupees: String {
+        return "₹\(self)"
+    }
+}
+
+// Use karo
+let mira = IOSDeveloper(name: "Mira", experience: 1.3)
+mira.greet()
+
+
+let income: Double = 40000
+print(income.toRupees)
