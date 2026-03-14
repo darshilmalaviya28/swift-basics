@@ -80,3 +80,37 @@ let newSalary = calculateSalary(current: 15000, increment: 10000)
 print("New Salary: ₹\(newSalary) 💰")
 
 introduce(name: "Darshil", city: "Ahmedabad", role: "iOS Developer")
+
+
+// --------------------------------------
+// MARK: Day 4 — Optionals
+// --------------------------------------
+
+
+// Optional — value hoi pan sake, na pan hoi
+var middleName: String? = nil
+var phoneNumber: String? = "9313890045"
+
+// Optional binding — if let
+if let phone = phoneNumber {
+    print("Phone: \(phone)")
+} else {
+    print("No phone number")
+}
+
+// Nil coalescing — ?? operator
+let optionalName: String? = nil
+let displayName = optionalName ?? "Darshil Malaviya"
+print("Display Name: \(displayName)")
+
+// Guard let
+func printMiddleName(name: String?) {
+    guard let unwrapped = name else {
+        print("No middle name found!")
+        return
+    }
+    print("Middle name: \(unwrapped)")
+}
+
+printMiddleName(name: middleName)
+printMiddleName(name: "Kumar")
