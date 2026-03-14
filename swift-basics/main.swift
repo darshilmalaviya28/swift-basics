@@ -1,7 +1,7 @@
 // Darshil Malaviya — Swift Learning Journey 🚀
 
 // --------------------------------------
-// MARK: - Day 1 — Variables & Constants
+// MARK: Day 1 — Variables & Constants
 // --------------------------------------
 
 
@@ -23,7 +23,7 @@ print("Goal: 40000+ 💪")
 
 
 // --------------------------------------
-// MARK: - Day 2 — Arrays & Loops
+// MARK: Day 2 — Arrays & Loops
 // --------------------------------------
 
 
@@ -51,3 +51,32 @@ for i in 0..<salaries.count {
 skills.append("SwiftUI")
 print("\nNew skill added: \(skills.last!)")
 print("Total skills: \(skills.count)")
+
+
+// --------------------------------------
+// MARK: Day 3 — Functions
+// --------------------------------------
+
+
+// Basic function
+func greet(name: String) {
+    print("Hello, \(name)! 👋")
+}
+
+// Function with return value
+func calculateSalary(current: Double, increment: Double) -> Double {
+    return current + increment
+}
+
+// Function with multiple parameters
+func introduce(name: String, city: String, role: String) {
+    print("I am \(name) from \(city), working as \(role)")
+}
+
+// Calling functions
+greet(name: "Darshil")
+
+let newSalary = calculateSalary(current: 15000, increment: 10000)
+print("New Salary: ₹\(newSalary) 💰")
+
+introduce(name: "Darshil", city: "Ahmedabad", role: "iOS Developer")
