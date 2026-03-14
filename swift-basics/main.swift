@@ -206,3 +206,46 @@ mira.greet()
 
 let income: Double = 40000
 print(income.toRupees)
+
+
+// --------------------------------------
+// MARK: Day 7 — Closures
+// --------------------------------------
+
+
+// Basic Closure
+let sayHello = {
+    print("Hello from Closure!")
+}
+sayHello()
+
+// Closure with parameters
+let addNumbers = { (a: Int, b: Int) -> Int in
+    return a + b
+}
+let result = addNumbers(10, 20)
+print("Sum: \(result)")
+
+// Closure as function parameter
+func doSomething(action: () -> Void) {
+    print("Before action")
+    action()
+    print("After action")
+}
+
+doSomething {
+    print("Darshil is coding!")
+}
+
+// Trailing closure — Array sort
+var closureSalaries = [15000, 40000, 25000, 35000]
+let sorted = closureSalaries.sorted { $0 < $1 }
+print("\nSorted Salaries: \(sorted)")
+
+// Map — har element pe operation
+let doubled = closureSalaries.map { $0 * 2 }
+print("Doubled: \(doubled)")
+
+// Filter — condition based
+let highSalaries = closureSalaries.filter { $0 > 20000 }
+print("High Salaries: \(highSalaries)")
