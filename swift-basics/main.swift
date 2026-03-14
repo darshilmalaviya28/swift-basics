@@ -1,4 +1,4 @@
-// Darshil Malaviya — Swift Learning Journey 🚀
+// Darshil Malaviya — Swift Learning Journey
 
 // --------------------------------------
 // MARK: Day 1 — Variables & Constants
@@ -19,7 +19,7 @@ print("Name: \(name)")
 print("City: \(city)")
 print("Language: \(language)")
 print("Current Salary: \(salary)")
-print("Goal: 40000+ 💪")
+print("Goal: 40000+")
 
 
 // --------------------------------------
@@ -60,7 +60,7 @@ print("Total skills: \(skills.count)")
 
 // Basic function
 func greet(name: String) {
-    print("Hello, \(name)! 👋")
+    print("Hello, \(name)!")
 }
 
 // Function with return value
@@ -77,7 +77,7 @@ func introduce(name: String, city: String, role: String) {
 greet(name: "Darshil")
 
 let newSalary = calculateSalary(current: 15000, increment: 10000)
-print("New Salary: ₹\(newSalary) 💰")
+print("New Salary: ₹\(newSalary)")
 
 introduce(name: "Darshil", city: "Ahmedabad", role: "iOS Developer")
 
@@ -114,3 +114,59 @@ func printMiddleName(name: String?) {
 
 printMiddleName(name: middleName)
 printMiddleName(name: "Kumar")
+
+
+// --------------------------------------
+// MARK: Day 5 — Class & Struct
+// --------------------------------------
+
+
+// Struct
+struct Developer {
+    var name: String
+    var city: String
+    var experience: Double
+    var salary: Double
+    
+    func introduce() {
+        print("I am \(name) from \(city)")
+        print("Experience: \(experience) years")
+        print("Salary: ₹\(salary)")
+    }
+}
+
+// Class
+class iOSDeveloper {
+    var name: String
+    var skills: [String]
+    
+    init(name: String, skills: [String]) {
+        self.name = name
+        self.skills = skills
+    }
+    
+    func showSkills() {
+        print("\n\(name)'s Skills:")
+        for skill in skills {
+            print("\(skill)")
+        }
+    }
+}
+
+// Using Struct
+var darshil = Developer(
+    name: "Darshil Malaviya",
+    city: "Ahmedabad",
+    experience: 1.3,
+    salary: 15000
+)
+darshil.introduce()
+darshil.salary = 40000
+print("New Salary: ₹\(darshil.salary)")
+
+// Using Class
+let developer = iOSDeveloper(
+    name: "Darshil",
+    skills: ["Swift", "UIKit", "SwiftUI", "REST APIs", "CoreData"]
+)
+developer.showSkills()
