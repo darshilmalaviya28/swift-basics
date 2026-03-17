@@ -249,3 +249,46 @@ print("Doubled: \(doubled)")
 // Filter — condition based
 let highSalaries = closureSalaries.filter { $0 > 20000 }
 print("High Salaries: \(highSalaries)")
+
+
+// --------------------------------------
+// MARK: Day 8 — Error Handling
+// --------------------------------------
+
+
+// Error define karo
+enum SalaryError: Error {
+    case tooLow
+    case negative
+}
+
+// Throwing function
+func validateSalary(_ amount: Double) throws -> String {
+    if amount < 0 {
+        throw SalaryError.negative
+    } else if amount < 20000 {
+        throw SalaryError.tooLow
+    }
+    return "Salary is valid! ₹\(amount)"
+}
+
+// Do-Try-Catch
+do {
+    let result1 = try validateSalary(15000)
+    print(result1)
+} catch SalaryError.tooLow {
+    print("Salary bahuj occhi che! Switch karo!")
+} catch SalaryError.negative {
+    print("Salary negative? Impossible!")
+} catch {
+    print("Unknown error: \(error)")
+}
+
+do {
+    let result2 = try validateSalary(40000)
+    print(result2)
+} catch SalaryError.tooLow {
+    print("Salary bahuj occhu che! Switch karo!")
+} catch {
+    print("Error: \(error)")
+}
